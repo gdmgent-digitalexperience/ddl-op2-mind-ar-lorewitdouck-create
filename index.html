@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0">
-    <title>DDL OP 2 - Mind AR That</title>
-    <link rel="stylesheet" href=".//CSS/main.css">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+  </head>
 
-</head>
-<body>
-
-<h1>DDL op 2 - Mind AR Roger That</h1>
-
-    <nav>
-        <ul>
-            <li>
-                <a href="./index.html"> Home</a>
-            </li>
-            <li>
-                <a href="./image.html"> Image Tracking</a>
-            </li>
-            <li>
-                <a href="./face.html"> Face Tracking</a>
-            </li>
-            
-        </ul>
-    </nav>
-
-</body>
+  <body>
+    <!--mindar-face zorgt dat hij je gezicht trackt-->
+    <a-scene
+      mindar-face 
+      embedded
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-camera active="false" position="0 0 0"></a-camera>
+        <!--plak alles wat in de entity zit vast aan 1 gezichtspunt-->
+      <a-entity mindar-face-target="anchorIndex: 1">
+        <a-sphere color="green" radius="0.1"></a-sphere>
+      </a-entity>
+    </a-scene>
+  </body>
 </html>
