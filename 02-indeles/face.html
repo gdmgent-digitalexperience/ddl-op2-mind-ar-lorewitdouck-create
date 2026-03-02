@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+  </head>
+
+  <body>
+    <a-scene
+      mindar-face
+      embedded
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-camera active="false" position="0 0 0"></a-camera>
+
+      <!--bril model inladen-->
+      <a-assets>
+        <a-asset-item id="face-Model" src="./assets/pink_round_sunglasses.glb"></a-asset-item>
+        <a-asset-item id="house" src="./assets/3d-master/house.glb"></a-asset-item>
+        <a-asset-item id="car" src="./assets/Car.glb"></a-asset-item>
+      </a-assets>
+
+      <!--bol op neus-->
+      <a-entity mindar-face-target="anchorIndex: 1">
+        <a-sphere color="green" radius="0.1"></a-sphere>
+      </a-entity>
+
+      <!--bril op neus-->
+      <a-entity mindar-face-target="anchorIndex: 197"> <!--het cijfer bepaald waar op je hoofd het komt-->
+        <a-gltf-model src="#face-Model" scale="0.7 0.7 0.7" position="0 0 -0.1"></a-gltf-model>
+      </a-entity>
+
+      <!--huis op hoofd-->
+      <a-entity mindar-face-target="anchorIndex: 10">
+         <a-gltf-model src="#house" scale="6 6 6" position="0 0 0" rotation="0 -90 0"></a-gltf-model>
+      </a-entity>
+
+       <!--auto op kin-->
+      <a-entity mindar-face-target="anchorIndex: 175">
+         <a-gltf-model src="#car" scale="0.1 0.1 0.1" position="0 0 0" rotation="0 -90 0"></a-gltf-model>
+      </a-entity>
+
+    </a-scene>
+
+  </body>
+</html>
