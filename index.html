@@ -1,25 +1,15 @@
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="./01-voorbereiding/index.html">Voorbereiding</a>
 
-  <body>
-    <!--mindar-face zorgt dat hij je gezicht trackt-->
-    <a-scene
-      mindar-face 
-      embedded
-      color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
-      vr-mode-ui="enabled: false"
-      device-orientation-permission-ui="enabled: false"
-    >
-      <a-camera active="false" position="0 0 0"></a-camera>
-        <!--plak alles wat in de entity zit vast aan 1 gezichtspunt-->
-      <a-entity mindar-face-target="anchorIndex: 1">
-        <a-sphere color="green" radius="0.1"></a-sphere>
-      </a-entity>
-    </a-scene>
-  </body>
+    <br>
+    
+    <a href="./02-indeles/index.html">Indeles</a>
+</body>
 </html>
